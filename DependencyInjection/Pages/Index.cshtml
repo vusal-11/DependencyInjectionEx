@@ -8,6 +8,13 @@
 
 <div class="text-center">
     <h1 class="display-4">Products</h1>
+    <div>
+        <form method="post" asp-route="/">
+            <p><input type="text" name="Name"/></p>
+            <p><input type="text" name="Description"/></p>
+            <input type="submit" value="Add product"/>
+        </form>
+    </div>
     @if (products.Any())
     {
         @foreach(var product in products)

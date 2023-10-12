@@ -9,27 +9,32 @@ public class InMemoryProductRepository : IProductRepository
     private readonly IDictionary<Guid,Product> _products
         = new Dictionary<Guid,Product>();
 
-    public InMemoryProductRepository()
+    public InMemoryProductRepository(bool data)
     {
 
-        AddProduct(new Product
+
+        if (data)
         {
-            Name = "Coca Cola",
-            Description = "Сделанно из жуков кошинель"
+            AddProduct(new Product
+            {
+                Name = "Coca Cola",
+                Description = "Сделанно из жуков кошинель"
+            }
+            );
+            AddProduct(new Product
+            {
+                Name = "Shaurma",
+                Description = "Наша шаурма вчера не гавкала и не мяукала.А задавала много вопросов"
+            }
+           );
+            AddProduct(new Product
+            {
+                Name = "Tea",
+                Description = "Tea Tess. Delicious!"
+            }
+          );
+
         }
-        );
-        AddProduct(new Product
-        {
-            Name = "Shaurma",
-            Description = "Наша шаурма вчера не гавкала и не мяукала.А задавала много вопросов"
-        }
-       );
-        AddProduct(new Product
-        {
-            Name = "Tea",
-            Description = "Tea Tess. Delicious!"
-        }
-      );
 
     }
 
